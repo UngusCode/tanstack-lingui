@@ -15,7 +15,7 @@ import * as React from "react"
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary"
 import { NotFound } from "~/components/NotFound"
 import { locales } from "~/modules/lingui/i18n"
-import appCss from "~/styles/app.css?url"
+// import appCss from "~/styles/app.css?url"
 import { seo } from "~/utils/seo"
 
 const updateLanguage = createServerFn({ method: "POST" })
@@ -47,7 +47,7 @@ export const Route = createRootRoute({
       }),
     ],
     links: [
-      { rel: "stylesheet", href: appCss },
+      // { rel: "stylesheet", href: appCss },
       {
         rel: "apple-touch-icon",
         sizes: "180x180",

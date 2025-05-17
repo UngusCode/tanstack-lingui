@@ -1,3 +1,4 @@
+import { } from '@tanstack/react-router'
 import { Link, Outlet } from "@tanstack/react-router"
 import { fetchPosts } from "../utils/posts"
 import { useLingui } from "@lingui/react/macro"

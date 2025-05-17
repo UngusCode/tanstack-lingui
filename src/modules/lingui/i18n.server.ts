@@ -1,15 +1,17 @@
 import {
+  EventHandlerRequest,
   getHeaders,
   getWebRequest,
+  H3Event,
   setHeader,
 } from "@tanstack/react-start/server"
 import { parse, serialize } from "cookie-es"
 
 import { defaultLocale, dynamicActivate, isLocaleValid } from "./i18n"
 
-function getLocaleFromRequest() {
-  const request = getWebRequest()
-  const headers = getHeaders()
+function getLocaleFromRequest(event: H3Event<EventHandlerRequest>) {
+  const request = getWebRequest(event)
+  const headers = getHeaders(event)
   const cookie = parse(headers.cookie ?? "")
 
   if (request) {
@@ -44,6 +46,8 @@ function getLocaleFromRequest() {
   return defaultLocale
 }
 
-export async function setupLocaleFromRequest() {
-  await dynamicActivate(getLocaleFromRequest())
+export async function setupLocaleFromRequest(
+  event: H3Event<EventHandlerRequest>
+) {
+  await dynamicActivate(getLocaleFromRequest(event))
 }

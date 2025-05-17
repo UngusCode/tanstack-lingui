@@ -1,3 +1,4 @@
+import { } from '@tanstack/react-router'
 import { t } from "@lingui/core/macro"
 import { useLingui } from "@lingui/react/macro"
 import { Link, Outlet } from "@tanstack/react-router"
